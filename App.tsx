@@ -5,7 +5,6 @@ import { RootStackParamList } from './src/types/navigation';
 import HomeScreen from './src/screens/Home';
 import ListScreen from './src/screens/Tela de Listagem';
 import DetailsScreen from './src/screens/Details';
-// import DetailsScreen from './src/screens/Details';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

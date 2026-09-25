@@ -15,10 +15,6 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../types/navigation";
 
 
-
-
-// import {useNavigation} from '@reactnative'
-
 interface PosterImage {
     small?: string;
     medium?: string;
@@ -83,7 +79,6 @@ export default function ListScreen() {
     const [error, setError] = useState<string | null>(null);
 
     const [selectedItem, setSelectedItem] = useState<KitsuItem | null>(null);
-
 
     const categories: Category[] = [
         {
@@ -285,9 +280,7 @@ export default function ListScreen() {
                                     key={item.id}
                                     style={styles.card}
                                     activeOpacity={0.8}
-                                    onPress={() => {
-                                        navigation.navigate('DetailsScreen', { animeId: item.id})}
-                                    }
+                                    onPress={() => setSelectedItem(item)}
                                 >
 
                                     <Image
@@ -508,6 +501,18 @@ export default function ListScreen() {
                                     </Text>{' '}
                                     {selectedItem.attributes.status || 'N/A'}
                                 </Text>
+
+                                <TouchableOpacity
+                                    style={styles.detailsButton}
+                                    onPress={() => {
+                                        setSelectedItem(null);
+                                         navigation.navigate('DetailsScreen', { animeId: selectedItem.id})
+                                    }}
+                                >
+                                    <Text style={styles.detailsButtonText}>
+                                        Ver detalhes
+                                    </Text>
+                                </TouchableOpacity>
 
                             </ScrollView>
 
@@ -770,6 +775,20 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
     },
+    detailsButton: {
+        marginTop: 20,
+        marginBottom: 10,
+        paddingVertical: 12,
+        borderRadius: 8,
+        backgroundColor: '#E63946',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 
+    detailsButtonText: {
+        color: '#0f0f15',
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
 
 });
