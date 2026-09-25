@@ -91,16 +91,6 @@ export default function ListScreen() {
             value: 'trending-anime',
             url: 'https://kitsu.io/api/edge/trending/anime',
         },
-        {
-            label: 'Mangás Populares',
-            value: 'manga',
-            url: 'https://kitsu.io/api/edge/manga?page[limit]=20',
-        },
-        {
-            label: 'Mangás em Alta',
-            value: 'trending-manga',
-            url: 'https://kitsu.io/api/edge/trending/manga',
-        },
     ];
 
     useEffect(() => {
@@ -168,7 +158,7 @@ export default function ListScreen() {
             {/* TÍTULO */}
 
             <Text style={styles.title}>
-                Kitsu Anime & Manga Explorer
+                Kitsu Anime
             </Text>
 
             {/* CATEGORIAS */}
@@ -536,6 +526,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#0f0f15',
         paddingTop: 35,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     title: {
@@ -556,6 +548,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         gap: 10,
         marginBottom: 20,
+        justifyContent: 'center',
         alignItems: 'center',
     },
 

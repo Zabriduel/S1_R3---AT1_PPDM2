@@ -18,7 +18,7 @@ export default function HomeScreen() {
 
             
             <Text style={styles.description}>
-                Explore o universo dos animes e mangás. Descubra novos títulos e consulte as informações direto da API.
+                Explore o universo dos animes. Descubra novos títulos e consulte as informações direto da API.
             </Text>
 
             <TouchableOpacity 
