@@ -11,18 +11,16 @@ export default function HomeScreen() {
     
     return (
         <View style={styles.container}>
-            {/* Logo da Aplicação */}
+        
             <Image source={require('../../../assets/logo.png')} style={styles.image} />
 
-            {/* 1. Nome ou título da aplicação */}
             <Text style={styles.title}>Kitsu Fox</Text>
 
-            {/* 2. Breve descrição da aplicação */}
+            
             <Text style={styles.description}>
                 Explore o universo dos animes e mangás. Descubra novos títulos e consulte as informações direto da API.
             </Text>
 
-            {/* 3. Botão para acessar os dados da API */}
             <TouchableOpacity 
                 style={styles.button} 
                 activeOpacity={0.8}
@@ -40,13 +38,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#25292e',
-        paddingHorizontal: 30, // Adicionado padding para o texto não colar nas bordas
+        paddingHorizontal: 30, 
     },
     image: {
         width: 200,
         height: 200,
         resizeMode: 'contain',
-        marginBottom: 24, // Espaçamento entre a logo e o título
+        marginBottom: 24, 
     },
     title: {
         fontSize: 32,
@@ -57,17 +55,17 @@ const styles = StyleSheet.create({
     },
     description: {
         fontSize: 16,
-        color: '#A0AAB2', // Cinza azulado para leitura confortável no fundo escuro
+        color: '#A0AAB2', 
         textAlign: 'center',
         lineHeight: 24,
-        marginBottom: 40, // Espaço generoso antes do botão
+        marginBottom: 40, 
     },
     button: {
-        backgroundColor: '#E63946', // Vermelho para combinar com a raposa e as cerejeiras
+        backgroundColor: '#E63946',
         paddingVertical: 16,
         paddingHorizontal: 24,
         borderRadius: 12,
-        width: '100%', // Ocupa a largura disponível
+        width: '100%', 
         alignItems: 'center',
     },
     buttonText: {
