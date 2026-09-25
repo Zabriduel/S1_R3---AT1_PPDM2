@@ -7,7 +7,6 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  Linking,
 } from 'react-native';
 import { useRoute, RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../types/navigation'; 
@@ -64,12 +63,6 @@ export default function DetailsScreen() {
   const getSafeUrl = (url?: string) =>
     url ? `https://images.weserv.nl/?url=${encodeURIComponent(url)}` : FALLBACK_IMAGE;
 
-  const openTrailer = (videoId?: string) => {
-    if (videoId) {
-      Linking.openURL(`https://www.youtube.com/watch?v=${videoId}`);
-    }
-  };
-
   const getStatusConfig = (status?: string) => {
     switch (status) {
       case 'current':
@@ -109,7 +102,6 @@ export default function DetailsScreen() {
       )}
 
       <View style={styles.content}>
-        {/* CABEÇALHO COM POSTER E TÍTULO */}
         <View style={styles.headerRow}>
           <Image
             source={{ uri: getSafeUrl(attr.posterImage?.large || attr.posterImage?.medium) }}
@@ -127,7 +119,6 @@ export default function DetailsScreen() {
           </View>
         </View>
 
-        {/* ESTATÍSTICAS EM LAYOUT 2x2 (Evita cortar "Popularidade") */}
         <View style={styles.statsGrid}>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>★ {Math.round(Number(attr.averageRating || 0))}%</Text>

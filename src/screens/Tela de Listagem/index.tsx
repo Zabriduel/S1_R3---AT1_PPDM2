@@ -221,7 +221,7 @@ export default function ListScreen() {
 
                     <ActivityIndicator
                         size="large"
-                        color="#a78bfa"
+                        color="#E63946"
                     />
 
                     <Text style={styles.loadingText}>
@@ -534,7 +534,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        color: '#a78bfa',
+        color: '#FFFF',
         fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'center',
@@ -569,8 +569,8 @@ const styles = StyleSheet.create({
 
     categoryButtonActive: {
         borderWidth: 2,
-        borderColor: '#a78bfa',
-        backgroundColor: '#a78bfa',
+        borderColor: '#E63946',
+        backgroundColor: '#E63946',
     },
 
     categoryButtonText: {
@@ -594,7 +594,7 @@ const styles = StyleSheet.create({
     },
 
     loadingText: {
-        color: '#a78bfa',
+        color: '#E63946',
         fontSize: 16,
         marginTop: 12,
     },
@@ -616,7 +616,7 @@ const styles = StyleSheet.create({
     },
 
     retryButton: {
-        backgroundColor: '#a78bfa',
+        backgroundColor: '#E63946',
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 8,
