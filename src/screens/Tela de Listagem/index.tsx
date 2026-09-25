@@ -11,7 +11,7 @@ import {
     Modal,
 } from 'react-native';
 
-// import {useNavigation} from '@reactnative'
+import { useNavigation } from '@react-navigation/native';
 
 interface PosterImage {
     small?: string;
@@ -75,6 +75,7 @@ export default function ListScreen() {
 
     const [selectedItem, setSelectedItem] = useState<KitsuItem | null>(null);
 
+    const navigation = useNavigation();
 
     const categories: Category[] = [
         {
@@ -498,6 +499,18 @@ export default function ListScreen() {
                                     {selectedItem.attributes.status || 'N/A'}
                                 </Text>
 
+                                <TouchableOpacity
+                                    style={styles.detailsButton}
+                                    onPress={() => {
+                                        setSelectedItem(null);
+                                        navigation.navigate('Detalhes' as never);
+                                    }}
+                                >
+                                    <Text style={styles.detailsButtonText}>
+                                        Ver detalhes
+                                    </Text>
+                                </TouchableOpacity>
+
                             </ScrollView>
 
                         </View>
@@ -759,6 +772,20 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
     },
+    detailsButton: {
+        marginTop: 20,
+        marginBottom: 10,
+        paddingVertical: 12,
+        borderRadius: 8,
+        backgroundColor: '#E63946',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 
+    detailsButtonText: {
+        color: '#0f0f15',
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
 
 });
