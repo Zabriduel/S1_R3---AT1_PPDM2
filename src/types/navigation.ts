@@ -1,5 +1,5 @@
 export type RootStackParamList = {
     HomeScreen: undefined;
-    ApiDataScreen: undefined;
+    ListScreen: undefined;
     DetailsScreen: { animeId: string };
 }

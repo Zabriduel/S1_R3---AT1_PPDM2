@@ -24,7 +24,7 @@ export default function HomeScreen() {
             <TouchableOpacity 
                 style={styles.button} 
                 activeOpacity={0.8}
-                onPress={() => navigation.navigate('ApiDataScreen')} 
+                onPress={() => navigation.navigate('ListScreen')} 
             >
                 <Text style={styles.buttonText}>Acessar Catálogo</Text>
             </TouchableOpacity>
